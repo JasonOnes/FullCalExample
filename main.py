@@ -4,6 +4,7 @@ import json
 
 app = Flask(__name__)
 
+# can't leave comments in json for more event properties https://fullcalendar.io/docs/event_data/Event_Object/
 
 @app.route('/')
 def calendar():
@@ -33,6 +34,8 @@ def show_las():
             with open("events.json", "w") as input_data:
                 input_data.flush(title='lasagna')
             '''
+            # javascript (?)
+            # .fullCalendar( 'removeEvents' [, idOrFilter ] ) from https://fullcalendar.io/docs/event_data/removeEvents/
             return redirect('/')
         elif request.form['choice'] == "recipe":
             return render_template('recipe.html')

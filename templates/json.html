@@ -19,6 +19,7 @@
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
 			events: {
+				
 				url: 'data',
 				error: function() {
 					$('#script-warning').show();
@@ -70,6 +71,25 @@
 	<div id='loading'>loading...</div>
 
 	<div id='calendar'></div>
+	
 
+	<!-- THE FOLLOWING IS FROM RICKS HARRY POTTER PROMPT -->
+	<!-- TODO need to div each day? -->
+	<!-- PUT THIS IN OUR OWN <script> with our url links -->
+	<div id='fc-day fc-widget-content'>
+		<button onclick="myFunction()">food</button>
+	<script>
+	function myFunction() {
+		var txt;
+		var person = prompt("What's for dinner", "search");
+		if (person == null || person == "") {
+			txt = "User cancelled the prompt.";
+		} else {
+			txt = "Hello " + person + "! How are you today?";
+		}
+		document.getElementById("demo").innerHTML = txt;
+	}
+	</script>
+	</div>
 </body>
 </html>
