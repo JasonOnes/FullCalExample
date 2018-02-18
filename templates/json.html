@@ -7,6 +7,7 @@
 <script src="{{ url_for('static', filename='lib/moment.min.js') }}"></script>
 <script src="{{ url_for('static', filename='lib/jquery.min.js') }}"></script>
 <script src="{{ url_for('static', filename='fullcalendar.min.js') }}"></script>
+<script src="{{ url_for('static', filename='pop-up.js') }}"></script>
 <script>
 	$(document).ready(function() {
 		$('#calendar').fullCalendar({
@@ -67,29 +68,44 @@
 	<div id='script-warning'>
 		Error getting data from <code>/data</code> endpoint.
 	</div>
-
+	
 	<div id='loading'>loading...</div>
 
 	<div id='calendar'></div>
 	
 
-	<!-- THE FOLLOWING IS FROM RICKS HARRY POTTER PROMPT -->
-	<!-- TODO need to div each day? -->
-	<!-- PUT THIS IN OUR OWN <script> with our url links -->
-	<div id='fc-day fc-widget-content'>
-		<button onclick="myFunction()">food</button>
-	<script>
-	function myFunction() {
-		var txt;
-		var person = prompt("What's for dinner", "search");
-		if (person == null || person == "") {
-			txt = "User cancelled the prompt.";
-		} else {
-			txt = "Hello " + person + "! How are you today?";
-		}
-		document.getElementById("demo").innerHTML = txt;
-	}
-	</script>
-	</div>
+	
+	<!-- TODO need to div each day? in div calendar-->
+<!-- Below is the inspected element for a day, probably can ignore fc-past for now -->
+<!-- <td class="fc-day fc-widget-content fc-mon/wed/thur fc-past/future" data-date="2018-02-15"></td> -->
+
+	<button onclick="myFunction()">food</button>
+	<!-- myfunction() in pop-up.js -->
+	<h2 id="pop-up-confirm"></h2>
+
 </body>
 </html>
+
+
+<!-- grid events @ fullcalendar.css #500-575 -->
+
+<!-- IN EACH DATE BLOCK SOMETHING LIKE THE FOLLOWING?
+
+	AJAX onreadystate change => click event triggered,[ getResponseHeader(param) (?), where param is date]
+	POST and/or GET Requests
+	request.onreadystatechange = day_space
+
+
+function day_space(space, date) {
+	if (space == '') {
+		var dinner = prompt("What's for dinner", "search");
+		return recipe_search(dinner);
+	}
+	else {
+		return pop_up_menu(space);
+	}
+}
+
+funtion pop_up_menu(recipe) {
+	var menu = prompt(radio-button form)
+} -->

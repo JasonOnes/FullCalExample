@@ -1,0 +1,12 @@
+More notes in files, specifically json.html
+
+It appears that cells(days) are not currently selected by clicks. They are highlited (selected) by drag events however.
+
+TODO:
+    Need to figure out how to add events to events.json
+    Using AJAX to pull data server side to get db info
+    Use AJAX to GET/POST client side to spoontacular api
+    Pop up menu as click event for each day, I think we can use the fc-past as a conditional to ignore days that have passed,
+    perhaps color blocking them neutral
+    
+
